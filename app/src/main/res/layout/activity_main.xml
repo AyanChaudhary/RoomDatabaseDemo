@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        app:title="ROOM DATABASE"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbar"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME :"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:id="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="15dp"/>
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_name"
+        android:hint="Enter Name"
+        app:layout_constraintTop_toTopOf="@id/tv_name"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_name"
+        app:layout_constraintStart_toEndOf="@id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-MAIL :"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:id="@+id/tv_email"
+        app:layout_constraintTop_toBottomOf="@id/et_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="15dp"/>
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_email"
+        android:hint="Enter Email"
+        app:layout_constraintTop_toTopOf="@id/tv_email"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_email"
+        app:layout_constraintStart_toEndOf="@id/tv_email"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_addRecord"
+        android:text="add record"
+        app:layout_constraintTop_toBottomOf="@id/et_email"
+        android:layout_margin="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NO RECORDS AVAILABLE"
+        app:layout_constraintTop_toBottomOf="@id/btn_addRecord"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/tv_norecavailable"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/rv_list"
+        app:layout_constraintTop_toBottomOf="@id/btn_addRecord"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        android:layout_marginTop="20dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
